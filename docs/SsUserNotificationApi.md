@@ -4,12 +4,81 @@ All URIs are relative to *https://api.saas4saas.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**contactus**](SsUserNotificationApi.md#contactus) | **GET** /s4s-user-notification/contactus | 
 [**operatorConf**](SsUserNotificationApi.md#operatorConf) | **GET** /s4s-user-notification/operator/conf/{notification-key} | 
 [**operatorSend**](SsUserNotificationApi.md#operatorSend) | **GET** /s4s-user-notification/operator/send/{notification-key} | 
 [**operatorSendEmail**](SsUserNotificationApi.md#operatorSendEmail) | **POST** /s4s-user-notification/operator/sendEmail | 
 [**userSend**](SsUserNotificationApi.md#userSend) | **GET** /s4s-user-notification/user/send/{notification-key} | 
 [**userSendEmail**](SsUserNotificationApi.md#userSendEmail) | **POST** /s4s-user-notification/user/sendEmail | 
 
+
+<a name="contactus"></a>
+# **contactus**
+> &#39;String&#39; contactus(name, email, phone, message)
+
+
+
+
+
+### Example
+```javascript
+var S4sFull = require('s4s_full');
+var defaultClient = S4sFull.ApiClient.default;
+
+// Configure API key authorization: tenantid
+var tenantid = defaultClient.authentications['tenantid'];
+tenantid.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//tenantid.apiKeyPrefix = 'Token';
+
+// Configure API key authorization: token
+var token = defaultClient.authentications['token'];
+token.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//token.apiKeyPrefix = 'Token';
+
+var apiInstance = new S4sFull.SsUserNotificationApi();
+
+var name = "name_example"; // String | 
+
+var email = "email_example"; // String | 
+
+var phone = "phone_example"; // String | 
+
+var message = "message_example"; // String | 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.contactus(name, email, phone, message, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**|  | 
+ **email** | **String**|  | 
+ **phone** | **String**|  | 
+ **message** | **String**|  | 
+
+### Return type
+
+**&#39;String&#39;**
+
+### Authorization
+
+[tenantid](../README.md#tenantid), [token](../README.md#token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="operatorConf"></a>
 # **operatorConf**

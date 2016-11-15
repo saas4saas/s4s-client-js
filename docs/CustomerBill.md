@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **id** | **String** |  | [optional] 
 **status** | **String** |  | [optional] 
 **totalInPayment** | **{String: Integer}** |  | [optional] 
+**paymentIdList** | **[String]** |  | [optional] 
 **planId** | **String** |  | [optional] 
 
 

@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Account', 'model/S4sError', 'model/Session', 'model/EmailRecover', 'model/UserApi', 'model/User', 'model/Login', 'model/UtUser', 'model/UserConfig', 'model/GoogleAuth', 'model/UserUiConf'], factory);
+    define(['ApiClient', 'model/Account', 'model/S4sError', 'model/Session', 'model/EmailRecover', 'model/InlineResponse2006', 'model/UserApi', 'model/InlineResponse2007', 'model/User', 'model/Login', 'model/UtUser', 'model/UserConfig', 'model/GoogleAuth', 'model/UserUiConf'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/Account'), require('../model/S4sError'), require('../model/Session'), require('../model/EmailRecover'), require('../model/UserApi'), require('../model/User'), require('../model/Login'), require('../model/UtUser'), require('../model/UserConfig'), require('../model/GoogleAuth'), require('../model/UserUiConf'));
+    module.exports = factory(require('../ApiClient'), require('../model/Account'), require('../model/S4sError'), require('../model/Session'), require('../model/EmailRecover'), require('../model/InlineResponse2006'), require('../model/UserApi'), require('../model/InlineResponse2007'), require('../model/User'), require('../model/Login'), require('../model/UtUser'), require('../model/UserConfig'), require('../model/GoogleAuth'), require('../model/UserUiConf'));
   } else {
     // Browser globals (root is window)
     if (!root.S4sFull) {
       root.S4sFull = {};
     }
-    root.S4sFull.SsUserApi = factory(root.S4sFull.ApiClient, root.S4sFull.Account, root.S4sFull.S4sError, root.S4sFull.Session, root.S4sFull.EmailRecover, root.S4sFull.UserApi, root.S4sFull.User, root.S4sFull.Login, root.S4sFull.UtUser, root.S4sFull.UserConfig, root.S4sFull.GoogleAuth, root.S4sFull.UserUiConf);
+    root.S4sFull.SsUserApi = factory(root.S4sFull.ApiClient, root.S4sFull.Account, root.S4sFull.S4sError, root.S4sFull.Session, root.S4sFull.EmailRecover, root.S4sFull.InlineResponse2006, root.S4sFull.UserApi, root.S4sFull.InlineResponse2007, root.S4sFull.User, root.S4sFull.Login, root.S4sFull.UtUser, root.S4sFull.UserConfig, root.S4sFull.GoogleAuth, root.S4sFull.UserUiConf);
   }
-}(this, function(ApiClient, Account, S4sError, Session, EmailRecover, UserApi, User, Login, UtUser, UserConfig, GoogleAuth, UserUiConf) {
+}(this, function(ApiClient, Account, S4sError, Session, EmailRecover, InlineResponse2006, UserApi, InlineResponse2007, User, Login, UtUser, UserConfig, GoogleAuth, UserUiConf) {
   'use strict';
 
   /**
@@ -197,7 +197,7 @@
      * Callback function to receive the result of the accountGetAll operation.
      * @callback module:api/SsUserApi~accountGetAllCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/InlineResponse2006} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -208,6 +208,7 @@
      * @param {Integer} numberPerPage 
      * @param {Boolean} loadDefaultUser 
      * @param {module:api/SsUserApi~accountGetAllCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2006}
      */
     this.accountGetAll = function(page, numberPerPage, loadDefaultUser, callback) {
       var postBody = null;
@@ -243,7 +244,7 @@
       var authNames = ['tenantid', 'token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = InlineResponse2006;
 
       return this.apiClient.callApi(
         '/s4s-user/account', 'GET',
@@ -401,7 +402,7 @@
      * Callback function to receive the result of the accountIdKeysGetAll operation.
      * @callback module:api/SsUserApi~accountIdKeysGetAllCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/InlineResponse2007} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -412,6 +413,7 @@
      * @param {Integer} page 
      * @param {Integer} numberPerPage 
      * @param {module:api/SsUserApi~accountIdKeysGetAllCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2007}
      */
     this.accountIdKeysGetAll = function(accountId, page, numberPerPage, callback) {
       var postBody = null;
@@ -447,7 +449,7 @@
       var authNames = ['tenantid', 'token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = InlineResponse2007;
 
       return this.apiClient.callApi(
         '/s4s-user/account/{account-id}/keys', 'GET',
@@ -1831,7 +1833,7 @@
      * Callback function to receive the result of the selfAccountKeysGetAll operation.
      * @callback module:api/SsUserApi~selfAccountKeysGetAllCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/InlineResponse2007} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1841,6 +1843,7 @@
      * @param {Integer} page 
      * @param {Integer} numberPerPage 
      * @param {module:api/SsUserApi~selfAccountKeysGetAllCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2007}
      */
     this.selfAccountKeysGetAll = function(page, numberPerPage, callback) {
       var postBody = null;
@@ -1870,7 +1873,7 @@
       var authNames = ['tenantid', 'token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = InlineResponse2007;
 
       return this.apiClient.callApi(
         '/s4s-user/selfAccount/keys', 'GET',

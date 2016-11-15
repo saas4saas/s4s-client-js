@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/S4sError', 'model/CustomerPack', 'model/CustomerPackSubscription', 'model/ProductConf'], factory);
+    define(['ApiClient', 'model/S4sError', 'model/CustomerPack', 'model/InlineResponse2003', 'model/InlineResponse2004', 'model/InlineResponse2005', 'model/CustomerPackSubscription', 'model/ProductConf'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/S4sError'), require('../model/CustomerPack'), require('../model/CustomerPackSubscription'), require('../model/ProductConf'));
+    module.exports = factory(require('../ApiClient'), require('../model/S4sError'), require('../model/CustomerPack'), require('../model/InlineResponse2003'), require('../model/InlineResponse2004'), require('../model/InlineResponse2005'), require('../model/CustomerPackSubscription'), require('../model/ProductConf'));
   } else {
     // Browser globals (root is window)
     if (!root.S4sFull) {
       root.S4sFull = {};
     }
-    root.S4sFull.SsProductApi = factory(root.S4sFull.ApiClient, root.S4sFull.S4sError, root.S4sFull.CustomerPack, root.S4sFull.CustomerPackSubscription, root.S4sFull.ProductConf);
+    root.S4sFull.SsProductApi = factory(root.S4sFull.ApiClient, root.S4sFull.S4sError, root.S4sFull.CustomerPack, root.S4sFull.InlineResponse2003, root.S4sFull.InlineResponse2004, root.S4sFull.InlineResponse2005, root.S4sFull.CustomerPackSubscription, root.S4sFull.ProductConf);
   }
-}(this, function(ApiClient, S4sError, CustomerPack, CustomerPackSubscription, ProductConf) {
+}(this, function(ApiClient, S4sError, CustomerPack, InlineResponse2003, InlineResponse2004, InlineResponse2005, CustomerPackSubscription, ProductConf) {
   'use strict';
 
   /**
@@ -335,7 +335,7 @@
      * Callback function to receive the result of the customerEnjoyValues operation.
      * @callback module:api/SsProductApi~customerEnjoyValuesCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/InlineResponse2003} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -347,6 +347,7 @@
      * @param {Integer} numberPerPage 
      * @param {Boolean} loadResourceStatusList 
      * @param {module:api/SsProductApi~customerEnjoyValuesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2003}
      */
     this.customerEnjoyValues = function(customerId, page, numberPerPage, loadResourceStatusList, callback) {
       var postBody = null;
@@ -388,7 +389,7 @@
       var authNames = ['tenantid', 'token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = InlineResponse2003;
 
       return this.apiClient.callApi(
         '/s4s-product/customer/{customer-id}/enjoy/values', 'GET',
@@ -500,7 +501,7 @@
      * Callback function to receive the result of the customerHistoryPackValues operation.
      * @callback module:api/SsProductApi~customerHistoryPackValuesCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/InlineResponse2003} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -512,6 +513,7 @@
      * @param {Integer} numberPerPage 
      * @param {Boolean} loadResourceStatusList 
      * @param {module:api/SsProductApi~customerHistoryPackValuesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2003}
      */
     this.customerHistoryPackValues = function(customerId, page, numberPerPage, loadResourceStatusList, callback) {
       var postBody = null;
@@ -553,7 +555,7 @@
       var authNames = ['tenantid', 'token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = InlineResponse2003;
 
       return this.apiClient.callApi(
         '/s4s-product/customer/{customer-id}/history/pack/values', 'GET',
@@ -665,7 +667,7 @@
      * Callback function to receive the result of the customerHistorySubscriptionValues operation.
      * @callback module:api/SsProductApi~customerHistorySubscriptionValuesCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/InlineResponse2004} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -677,6 +679,7 @@
      * @param {Integer} numberPerPage 
      * @param {Boolean} loadResourceStatusList 
      * @param {module:api/SsProductApi~customerHistorySubscriptionValuesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2004}
      */
     this.customerHistorySubscriptionValues = function(customerId, page, numberPerPage, loadResourceStatusList, callback) {
       var postBody = null;
@@ -718,7 +721,7 @@
       var authNames = ['tenantid', 'token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = InlineResponse2004;
 
       return this.apiClient.callApi(
         '/s4s-product/customer/{customer-id}/history/subscription/values', 'GET',
@@ -731,7 +734,7 @@
      * Callback function to receive the result of the customerResource operation.
      * @callback module:api/SsProductApi~customerResourceCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/InlineResponse2005} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -742,6 +745,7 @@
      * @param {Integer} page 
      * @param {Integer} numberPerPage 
      * @param {module:api/SsProductApi~customerResourceCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2005}
      */
     this.customerResource = function(customerId, page, numberPerPage, callback) {
       var postBody = null;
@@ -777,7 +781,7 @@
       var authNames = ['tenantid', 'token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = InlineResponse2005;
 
       return this.apiClient.callApi(
         '/s4s-product/customer/{customer-id}/resource', 'GET',
@@ -1111,7 +1115,7 @@
      * Callback function to receive the result of the customerSubscriptionValues operation.
      * @callback module:api/SsProductApi~customerSubscriptionValuesCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/InlineResponse2004} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -1123,6 +1127,7 @@
      * @param {Integer} numberPerPage 
      * @param {Boolean} loadDefaultUser 
      * @param {module:api/SsProductApi~customerSubscriptionValuesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2004}
      */
     this.customerSubscriptionValues = function(customerId, page, numberPerPage, loadDefaultUser, callback) {
       var postBody = null;
@@ -1164,7 +1169,7 @@
       var authNames = ['tenantid', 'token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = InlineResponse2004;
 
       return this.apiClient.callApi(
         '/s4s-product/customer/{customer-id}/subscription/values', 'GET',

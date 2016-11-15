@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/S4sError', 'model/PaymentConf', 'model/CustomerInfo', 'model/StripeCustomer', 'model/PaymentRequest'], factory);
+    define(['ApiClient', 'model/S4sError', 'model/PaymentConf', 'model/CustomerInfo', 'model/StripeCustomer', 'model/PaymentRequest', 'model/InlineResponse200'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/S4sError'), require('../model/PaymentConf'), require('../model/CustomerInfo'), require('../model/StripeCustomer'), require('../model/PaymentRequest'));
+    module.exports = factory(require('../ApiClient'), require('../model/S4sError'), require('../model/PaymentConf'), require('../model/CustomerInfo'), require('../model/StripeCustomer'), require('../model/PaymentRequest'), require('../model/InlineResponse200'));
   } else {
     // Browser globals (root is window)
     if (!root.S4sFull) {
       root.S4sFull = {};
     }
-    root.S4sFull.SsPaymentApi = factory(root.S4sFull.ApiClient, root.S4sFull.S4sError, root.S4sFull.PaymentConf, root.S4sFull.CustomerInfo, root.S4sFull.StripeCustomer, root.S4sFull.PaymentRequest);
+    root.S4sFull.SsPaymentApi = factory(root.S4sFull.ApiClient, root.S4sFull.S4sError, root.S4sFull.PaymentConf, root.S4sFull.CustomerInfo, root.S4sFull.StripeCustomer, root.S4sFull.PaymentRequest, root.S4sFull.InlineResponse200);
   }
-}(this, function(ApiClient, S4sError, PaymentConf, CustomerInfo, StripeCustomer, PaymentRequest) {
+}(this, function(ApiClient, S4sError, PaymentConf, CustomerInfo, StripeCustomer, PaymentRequest, InlineResponse200) {
   'use strict';
 
   /**
@@ -501,7 +501,7 @@
      * Callback function to receive the result of the customerPaymentValues operation.
      * @callback module:api/SsPaymentApi~customerPaymentValuesCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/InlineResponse200} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -512,6 +512,7 @@
      * @param {Integer} page 
      * @param {Integer} numberPerPage 
      * @param {module:api/SsPaymentApi~customerPaymentValuesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse200}
      */
     this.customerPaymentValues = function(customerId, page, numberPerPage, callback) {
       var postBody = null;
@@ -547,7 +548,7 @@
       var authNames = ['tenantid', 'token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = InlineResponse200;
 
       return this.apiClient.callApi(
         '/s4s-payment/customer/{customer-id}/payment/values', 'GET',
@@ -641,7 +642,7 @@
      * Callback function to receive the result of the paymentGetAll operation.
      * @callback module:api/SsPaymentApi~paymentGetAllCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/InlineResponse200} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -651,6 +652,7 @@
      * @param {Integer} page 
      * @param {Integer} numberPerPage 
      * @param {module:api/SsPaymentApi~paymentGetAllCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse200}
      */
     this.paymentGetAll = function(page, numberPerPage, callback) {
       var postBody = null;
@@ -680,7 +682,7 @@
       var authNames = ['tenantid', 'token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = InlineResponse200;
 
       return this.apiClient.callApi(
         '/s4s-payment/payment', 'GET',

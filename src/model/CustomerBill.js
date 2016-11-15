@@ -65,6 +65,7 @@
 
 
 
+
   };
 
   /**
@@ -98,6 +99,9 @@
       }
       if (data.hasOwnProperty('totalInPayment')) {
         obj['totalInPayment'] = ApiClient.convertToType(data['totalInPayment'], {'String': 'Integer'});
+      }
+      if (data.hasOwnProperty('paymentIdList')) {
+        obj['paymentIdList'] = ApiClient.convertToType(data['paymentIdList'], ['String']);
       }
       if (data.hasOwnProperty('planId')) {
         obj['planId'] = ApiClient.convertToType(data['planId'], 'String');
@@ -134,6 +138,10 @@
    * @member {Object.<String, Integer>} totalInPayment
    */
   exports.prototype['totalInPayment'] = undefined;
+  /**
+   * @member {Array.<String>} paymentIdList
+   */
+  exports.prototype['paymentIdList'] = undefined;
   /**
    * @member {String} planId
    */

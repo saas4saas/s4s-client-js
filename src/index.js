@@ -25,12 +25,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/Account', 'model/CustomerBill', 'model/CustomerInfo', 'model/CustomerPack', 'model/CustomerPackSubscription', 'model/CustomerPayment', 'model/CustomerPlan', 'model/CustomerPlanPeriod', 'model/Email', 'model/EmailRecover', 'model/FinalInterval', 'model/GoogleAuth', 'model/GoogleTokenId', 'model/Login', 'model/OneTimePay', 'model/OperatorConfiguration', 'model/Pack', 'model/PaymentConf', 'model/PaymentPaypal', 'model/PaymentRequest', 'model/Plan', 'model/Price', 'model/PricingConf', 'model/PricingPolicy', 'model/PricingTable2Full', 'model/PricingTable2Plan', 'model/PricingTableFull', 'model/PricingTablePack', 'model/PricingTablePlan', 'model/PricingTablePlanCost', 'model/PricingTableResource', 'model/PricingUiConf', 'model/PricingUiConfPack', 'model/PricingUiConfPlan', 'model/PricingUiConfResource', 'model/ProductConf', 'model/QuantiyIntervalPrice', 'model/Resource', 'model/ResourcePatch', 'model/ResourcePatchResult', 'model/ResourceStatus', 'model/S4sError', 'model/Session', 'model/StripeAccessCode', 'model/StripeConf', 'model/StripeCustomer', 'model/Subscription', 'model/User', 'model/UserApi', 'model/UserConfig', 'model/UserContact', 'model/UserEntity', 'model/UserUiConf', 'model/UtUser', 'model/VariableCost', 'model/VariableCostIntervalCost', 'model/VariableCostIntervalPerUnit', 'model/VariableCostPerUnit', 'api/SsPaymentApi', 'api/SsPricingApi', 'api/SsProductApi', 'api/SsResourceApi', 'api/SsUserApi', 'api/SsUserNotificationApi'], factory);
+    define(['ApiClient', 'model/Account', 'model/CustomerBill', 'model/CustomerInfo', 'model/CustomerPack', 'model/CustomerPackSubscription', 'model/CustomerPayment', 'model/CustomerPlan', 'model/CustomerPlanPeriod', 'model/Email', 'model/EmailRecover', 'model/FinalInterval', 'model/GoogleAuth', 'model/GoogleTokenId', 'model/InlineResponse200', 'model/InlineResponse2001', 'model/InlineResponse2002', 'model/InlineResponse2003', 'model/InlineResponse2004', 'model/InlineResponse2005', 'model/InlineResponse2006', 'model/InlineResponse2007', 'model/Login', 'model/OneTimePay', 'model/OperatorConfiguration', 'model/Pack', 'model/PaymentConf', 'model/PaymentPaypal', 'model/PaymentRequest', 'model/Plan', 'model/Price', 'model/PricingConf', 'model/PricingPolicy', 'model/PricingTable2Full', 'model/PricingTable2Plan', 'model/PricingTableFull', 'model/PricingTablePack', 'model/PricingTablePlan', 'model/PricingTablePlanCost', 'model/PricingTableResource', 'model/PricingUiConf', 'model/PricingUiConfPack', 'model/PricingUiConfPlan', 'model/PricingUiConfResource', 'model/ProductConf', 'model/QuantiyIntervalPrice', 'model/Resource', 'model/ResourcePatch', 'model/ResourcePatchResult', 'model/ResourceStatus', 'model/S4sError', 'model/Session', 'model/StripeAccessCode', 'model/StripeConf', 'model/StripeCustomer', 'model/Subscription', 'model/User', 'model/UserApi', 'model/UserConfig', 'model/UserContact', 'model/UserEntity', 'model/UserUiConf', 'model/UtUser', 'model/VariableCost', 'model/VariableCostIntervalCost', 'model/VariableCostIntervalPerUnit', 'model/VariableCostPerUnit', 'api/SsPaymentApi', 'api/SsPricingApi', 'api/SsProductApi', 'api/SsResourceApi', 'api/SsUserApi', 'api/SsUserNotificationApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/Account'), require('./model/CustomerBill'), require('./model/CustomerInfo'), require('./model/CustomerPack'), require('./model/CustomerPackSubscription'), require('./model/CustomerPayment'), require('./model/CustomerPlan'), require('./model/CustomerPlanPeriod'), require('./model/Email'), require('./model/EmailRecover'), require('./model/FinalInterval'), require('./model/GoogleAuth'), require('./model/GoogleTokenId'), require('./model/Login'), require('./model/OneTimePay'), require('./model/OperatorConfiguration'), require('./model/Pack'), require('./model/PaymentConf'), require('./model/PaymentPaypal'), require('./model/PaymentRequest'), require('./model/Plan'), require('./model/Price'), require('./model/PricingConf'), require('./model/PricingPolicy'), require('./model/PricingTable2Full'), require('./model/PricingTable2Plan'), require('./model/PricingTableFull'), require('./model/PricingTablePack'), require('./model/PricingTablePlan'), require('./model/PricingTablePlanCost'), require('./model/PricingTableResource'), require('./model/PricingUiConf'), require('./model/PricingUiConfPack'), require('./model/PricingUiConfPlan'), require('./model/PricingUiConfResource'), require('./model/ProductConf'), require('./model/QuantiyIntervalPrice'), require('./model/Resource'), require('./model/ResourcePatch'), require('./model/ResourcePatchResult'), require('./model/ResourceStatus'), require('./model/S4sError'), require('./model/Session'), require('./model/StripeAccessCode'), require('./model/StripeConf'), require('./model/StripeCustomer'), require('./model/Subscription'), require('./model/User'), require('./model/UserApi'), require('./model/UserConfig'), require('./model/UserContact'), require('./model/UserEntity'), require('./model/UserUiConf'), require('./model/UtUser'), require('./model/VariableCost'), require('./model/VariableCostIntervalCost'), require('./model/VariableCostIntervalPerUnit'), require('./model/VariableCostPerUnit'), require('./api/SsPaymentApi'), require('./api/SsPricingApi'), require('./api/SsProductApi'), require('./api/SsResourceApi'), require('./api/SsUserApi'), require('./api/SsUserNotificationApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/Account'), require('./model/CustomerBill'), require('./model/CustomerInfo'), require('./model/CustomerPack'), require('./model/CustomerPackSubscription'), require('./model/CustomerPayment'), require('./model/CustomerPlan'), require('./model/CustomerPlanPeriod'), require('./model/Email'), require('./model/EmailRecover'), require('./model/FinalInterval'), require('./model/GoogleAuth'), require('./model/GoogleTokenId'), require('./model/InlineResponse200'), require('./model/InlineResponse2001'), require('./model/InlineResponse2002'), require('./model/InlineResponse2003'), require('./model/InlineResponse2004'), require('./model/InlineResponse2005'), require('./model/InlineResponse2006'), require('./model/InlineResponse2007'), require('./model/Login'), require('./model/OneTimePay'), require('./model/OperatorConfiguration'), require('./model/Pack'), require('./model/PaymentConf'), require('./model/PaymentPaypal'), require('./model/PaymentRequest'), require('./model/Plan'), require('./model/Price'), require('./model/PricingConf'), require('./model/PricingPolicy'), require('./model/PricingTable2Full'), require('./model/PricingTable2Plan'), require('./model/PricingTableFull'), require('./model/PricingTablePack'), require('./model/PricingTablePlan'), require('./model/PricingTablePlanCost'), require('./model/PricingTableResource'), require('./model/PricingUiConf'), require('./model/PricingUiConfPack'), require('./model/PricingUiConfPlan'), require('./model/PricingUiConfResource'), require('./model/ProductConf'), require('./model/QuantiyIntervalPrice'), require('./model/Resource'), require('./model/ResourcePatch'), require('./model/ResourcePatchResult'), require('./model/ResourceStatus'), require('./model/S4sError'), require('./model/Session'), require('./model/StripeAccessCode'), require('./model/StripeConf'), require('./model/StripeCustomer'), require('./model/Subscription'), require('./model/User'), require('./model/UserApi'), require('./model/UserConfig'), require('./model/UserContact'), require('./model/UserEntity'), require('./model/UserUiConf'), require('./model/UtUser'), require('./model/VariableCost'), require('./model/VariableCostIntervalCost'), require('./model/VariableCostIntervalPerUnit'), require('./model/VariableCostPerUnit'), require('./api/SsPaymentApi'), require('./api/SsPricingApi'), require('./api/SsProductApi'), require('./api/SsResourceApi'), require('./api/SsUserApi'), require('./api/SsUserNotificationApi'));
   }
-}(function(ApiClient, Account, CustomerBill, CustomerInfo, CustomerPack, CustomerPackSubscription, CustomerPayment, CustomerPlan, CustomerPlanPeriod, Email, EmailRecover, FinalInterval, GoogleAuth, GoogleTokenId, Login, OneTimePay, OperatorConfiguration, Pack, PaymentConf, PaymentPaypal, PaymentRequest, Plan, Price, PricingConf, PricingPolicy, PricingTable2Full, PricingTable2Plan, PricingTableFull, PricingTablePack, PricingTablePlan, PricingTablePlanCost, PricingTableResource, PricingUiConf, PricingUiConfPack, PricingUiConfPlan, PricingUiConfResource, ProductConf, QuantiyIntervalPrice, Resource, ResourcePatch, ResourcePatchResult, ResourceStatus, S4sError, Session, StripeAccessCode, StripeConf, StripeCustomer, Subscription, User, UserApi, UserConfig, UserContact, UserEntity, UserUiConf, UtUser, VariableCost, VariableCostIntervalCost, VariableCostIntervalPerUnit, VariableCostPerUnit, SsPaymentApi, SsPricingApi, SsProductApi, SsResourceApi, SsUserApi, SsUserNotificationApi) {
+}(function(ApiClient, Account, CustomerBill, CustomerInfo, CustomerPack, CustomerPackSubscription, CustomerPayment, CustomerPlan, CustomerPlanPeriod, Email, EmailRecover, FinalInterval, GoogleAuth, GoogleTokenId, InlineResponse200, InlineResponse2001, InlineResponse2002, InlineResponse2003, InlineResponse2004, InlineResponse2005, InlineResponse2006, InlineResponse2007, Login, OneTimePay, OperatorConfiguration, Pack, PaymentConf, PaymentPaypal, PaymentRequest, Plan, Price, PricingConf, PricingPolicy, PricingTable2Full, PricingTable2Plan, PricingTableFull, PricingTablePack, PricingTablePlan, PricingTablePlanCost, PricingTableResource, PricingUiConf, PricingUiConfPack, PricingUiConfPlan, PricingUiConfResource, ProductConf, QuantiyIntervalPrice, Resource, ResourcePatch, ResourcePatchResult, ResourceStatus, S4sError, Session, StripeAccessCode, StripeConf, StripeCustomer, Subscription, User, UserApi, UserConfig, UserContact, UserEntity, UserUiConf, UtUser, VariableCost, VariableCostIntervalCost, VariableCostIntervalPerUnit, VariableCostPerUnit, SsPaymentApi, SsPricingApi, SsProductApi, SsResourceApi, SsUserApi, SsUserNotificationApi) {
   'use strict';
 
   /**
@@ -135,6 +135,46 @@
      * @property {module:model/GoogleTokenId}
      */
     GoogleTokenId: GoogleTokenId,
+    /**
+     * The InlineResponse200 model constructor.
+     * @property {module:model/InlineResponse200}
+     */
+    InlineResponse200: InlineResponse200,
+    /**
+     * The InlineResponse2001 model constructor.
+     * @property {module:model/InlineResponse2001}
+     */
+    InlineResponse2001: InlineResponse2001,
+    /**
+     * The InlineResponse2002 model constructor.
+     * @property {module:model/InlineResponse2002}
+     */
+    InlineResponse2002: InlineResponse2002,
+    /**
+     * The InlineResponse2003 model constructor.
+     * @property {module:model/InlineResponse2003}
+     */
+    InlineResponse2003: InlineResponse2003,
+    /**
+     * The InlineResponse2004 model constructor.
+     * @property {module:model/InlineResponse2004}
+     */
+    InlineResponse2004: InlineResponse2004,
+    /**
+     * The InlineResponse2005 model constructor.
+     * @property {module:model/InlineResponse2005}
+     */
+    InlineResponse2005: InlineResponse2005,
+    /**
+     * The InlineResponse2006 model constructor.
+     * @property {module:model/InlineResponse2006}
+     */
+    InlineResponse2006: InlineResponse2006,
+    /**
+     * The InlineResponse2007 model constructor.
+     * @property {module:model/InlineResponse2007}
+     */
+    InlineResponse2007: InlineResponse2007,
     /**
      * The Login model constructor.
      * @property {module:model/Login}

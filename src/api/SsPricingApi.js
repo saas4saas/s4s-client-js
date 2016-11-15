@@ -25,18 +25,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/S4sError', 'model/CustomerBill', 'model/CustomerPlan', 'model/Plan', 'model/PricingTableFull', 'model/PricingTable2Full', 'model/PricingConf', 'model/PricingUiConf'], factory);
+    define(['ApiClient', 'model/S4sError', 'model/CustomerBill', 'model/InlineResponse2001', 'model/InlineResponse2002', 'model/CustomerPlan', 'model/Plan', 'model/PricingTableFull', 'model/PricingTable2Full', 'model/PricingConf', 'model/PricingUiConf'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/S4sError'), require('../model/CustomerBill'), require('../model/CustomerPlan'), require('../model/Plan'), require('../model/PricingTableFull'), require('../model/PricingTable2Full'), require('../model/PricingConf'), require('../model/PricingUiConf'));
+    module.exports = factory(require('../ApiClient'), require('../model/S4sError'), require('../model/CustomerBill'), require('../model/InlineResponse2001'), require('../model/InlineResponse2002'), require('../model/CustomerPlan'), require('../model/Plan'), require('../model/PricingTableFull'), require('../model/PricingTable2Full'), require('../model/PricingConf'), require('../model/PricingUiConf'));
   } else {
     // Browser globals (root is window)
     if (!root.S4sFull) {
       root.S4sFull = {};
     }
-    root.S4sFull.SsPricingApi = factory(root.S4sFull.ApiClient, root.S4sFull.S4sError, root.S4sFull.CustomerBill, root.S4sFull.CustomerPlan, root.S4sFull.Plan, root.S4sFull.PricingTableFull, root.S4sFull.PricingTable2Full, root.S4sFull.PricingConf, root.S4sFull.PricingUiConf);
+    root.S4sFull.SsPricingApi = factory(root.S4sFull.ApiClient, root.S4sFull.S4sError, root.S4sFull.CustomerBill, root.S4sFull.InlineResponse2001, root.S4sFull.InlineResponse2002, root.S4sFull.CustomerPlan, root.S4sFull.Plan, root.S4sFull.PricingTableFull, root.S4sFull.PricingTable2Full, root.S4sFull.PricingConf, root.S4sFull.PricingUiConf);
   }
-}(this, function(ApiClient, S4sError, CustomerBill, CustomerPlan, Plan, PricingTableFull, PricingTable2Full, PricingConf, PricingUiConf) {
+}(this, function(ApiClient, S4sError, CustomerBill, InlineResponse2001, InlineResponse2002, CustomerPlan, Plan, PricingTableFull, PricingTable2Full, PricingConf, PricingUiConf) {
   'use strict';
 
   /**
@@ -332,7 +332,7 @@
      * Callback function to receive the result of the customerBillValues operation.
      * @callback module:api/SsPricingApi~customerBillValuesCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/InlineResponse2001} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -343,6 +343,7 @@
      * @param {Integer} page 
      * @param {Integer} numberPerPage 
      * @param {module:api/SsPricingApi~customerBillValuesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2001}
      */
     this.customerBillValues = function(customerId, page, numberPerPage, callback) {
       var postBody = null;
@@ -378,7 +379,7 @@
       var authNames = ['tenantid', 'token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = InlineResponse2001;
 
       return this.apiClient.callApi(
         '/s4s-pricing/customer/{customer-id}/bill/values', 'GET',
@@ -391,7 +392,7 @@
      * Callback function to receive the result of the customerHistoryPlanValues operation.
      * @callback module:api/SsPricingApi~customerHistoryPlanValuesCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/InlineResponse2002} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -402,6 +403,7 @@
      * @param {Integer} page 
      * @param {Integer} numberPerPage 
      * @param {module:api/SsPricingApi~customerHistoryPlanValuesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2002}
      */
     this.customerHistoryPlanValues = function(customerId, page, numberPerPage, callback) {
       var postBody = null;
@@ -437,7 +439,7 @@
       var authNames = ['tenantid', 'token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = InlineResponse2002;
 
       return this.apiClient.callApi(
         '/s4s-pricing/customer/{customer-id}/history/plan/values', 'GET',
@@ -873,7 +875,7 @@
      * Callback function to receive the result of the customerPlanValues operation.
      * @callback module:api/SsPricingApi~customerPlanValuesCallback
      * @param {String} error Error message, if any.
-     * @param data This operation does not return a value.
+     * @param {module:model/InlineResponse2002} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
@@ -884,6 +886,7 @@
      * @param {Integer} page 
      * @param {Integer} numberPerPage 
      * @param {module:api/SsPricingApi~customerPlanValuesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/InlineResponse2002}
      */
     this.customerPlanValues = function(customerId, page, numberPerPage, callback) {
       var postBody = null;
@@ -919,7 +922,7 @@
       var authNames = ['tenantid', 'token'];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = null;
+      var returnType = InlineResponse2002;
 
       return this.apiClient.callApi(
         '/s4s-pricing/customer/{customer-id}/plan/values', 'GET',

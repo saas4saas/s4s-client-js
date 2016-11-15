@@ -246,7 +246,7 @@ Name | Type | Description  | Notes
 
 <a name="accountGetAll"></a>
 # **accountGetAll**
-> accountGetAll(page, numberPerPage, loadDefaultUser)
+> InlineResponse2006 accountGetAll(page, numberPerPage, loadDefaultUser)
 
 
 
@@ -282,7 +282,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.accountGetAll(page, numberPerPage, loadDefaultUser, callback);
@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse2006**](InlineResponse2006.md)
 
 ### Authorization
 
@@ -491,7 +491,7 @@ Name | Type | Description  | Notes
 
 <a name="accountIdKeysGetAll"></a>
 # **accountIdKeysGetAll**
-> accountIdKeysGetAll(accountId, page, numberPerPage)
+> InlineResponse2007 accountIdKeysGetAll(accountId, page, numberPerPage)
 
 
 
@@ -527,7 +527,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.accountIdKeysGetAll(accountId, page, numberPerPage, callback);
@@ -543,7 +543,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 
@@ -2298,7 +2298,7 @@ Name | Type | Description  | Notes
 
 <a name="selfAccountKeysGetAll"></a>
 # **selfAccountKeysGetAll**
-> selfAccountKeysGetAll(page, numberPerPage)
+> InlineResponse2007 selfAccountKeysGetAll(page, numberPerPage)
 
 
 
@@ -2332,7 +2332,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.selfAccountKeysGetAll(page, numberPerPage, callback);
@@ -2347,7 +2347,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse2007**](InlineResponse2007.md)
 
 ### Authorization
 

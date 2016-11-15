@@ -566,7 +566,7 @@ Name | Type | Description  | Notes
 
 <a name="customerPaymentValues"></a>
 # **customerPaymentValues**
-> customerPaymentValues(customerId, page, numberPerPage)
+> InlineResponse200 customerPaymentValues(customerId, page, numberPerPage)
 
 
 
@@ -602,7 +602,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.customerPaymentValues(customerId, page, numberPerPage, callback);
@@ -618,7 +618,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 
@@ -744,7 +744,7 @@ Name | Type | Description  | Notes
 
 <a name="paymentGetAll"></a>
 # **paymentGetAll**
-> paymentGetAll(page, numberPerPage)
+> InlineResponse200 paymentGetAll(page, numberPerPage)
 
 
 
@@ -778,7 +778,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.paymentGetAll(page, numberPerPage, callback);
@@ -793,7 +793,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse200**](InlineResponse200.md)
 
 ### Authorization
 

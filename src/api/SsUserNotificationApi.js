@@ -57,6 +57,73 @@
 
 
     /**
+     * Callback function to receive the result of the contactus operation.
+     * @callback module:api/SsUserNotificationApi~contactusCallback
+     * @param {String} error Error message, if any.
+     * @param {'String'} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * 
+     * @param {String} name 
+     * @param {String} email 
+     * @param {String} phone 
+     * @param {String} message 
+     * @param {module:api/SsUserNotificationApi~contactusCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link 'String'}
+     */
+    this.contactus = function(name, email, phone, message, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'name' is set
+      if (name == undefined || name == null) {
+        throw "Missing the required parameter 'name' when calling contactus";
+      }
+
+      // verify the required parameter 'email' is set
+      if (email == undefined || email == null) {
+        throw "Missing the required parameter 'email' when calling contactus";
+      }
+
+      // verify the required parameter 'phone' is set
+      if (phone == undefined || phone == null) {
+        throw "Missing the required parameter 'phone' when calling contactus";
+      }
+
+      // verify the required parameter 'message' is set
+      if (message == undefined || message == null) {
+        throw "Missing the required parameter 'message' when calling contactus";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'name': name,
+        'email': email,
+        'phone': phone,
+        'message': message
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['tenantid', 'token'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = 'String';
+
+      return this.apiClient.callApi(
+        '/s4s-user-notification/contactus', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the operatorConf operation.
      * @callback module:api/SsUserNotificationApi~operatorConfCallback
      * @param {String} error Error message, if any.

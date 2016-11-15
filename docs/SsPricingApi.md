@@ -344,7 +344,7 @@ Name | Type | Description  | Notes
 
 <a name="customerBillValues"></a>
 # **customerBillValues**
-> customerBillValues(customerId, page, numberPerPage)
+> InlineResponse2001 customerBillValues(customerId, page, numberPerPage)
 
 
 
@@ -380,7 +380,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.customerBillValues(customerId, page, numberPerPage, callback);
@@ -396,7 +396,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse2001**](InlineResponse2001.md)
 
 ### Authorization
 
@@ -409,7 +409,7 @@ null (empty response body)
 
 <a name="customerHistoryPlanValues"></a>
 # **customerHistoryPlanValues**
-> customerHistoryPlanValues(customerId, page, numberPerPage)
+> InlineResponse2002 customerHistoryPlanValues(customerId, page, numberPerPage)
 
 
 
@@ -445,7 +445,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.customerHistoryPlanValues(customerId, page, numberPerPage, callback);
@@ -461,7 +461,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 
@@ -975,7 +975,7 @@ Name | Type | Description  | Notes
 
 <a name="customerPlanValues"></a>
 # **customerPlanValues**
-> customerPlanValues(customerId, page, numberPerPage)
+> InlineResponse2002 customerPlanValues(customerId, page, numberPerPage)
 
 
 
@@ -1011,7 +1011,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.customerPlanValues(customerId, page, numberPerPage, callback);
@@ -1027,7 +1027,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse2002**](InlineResponse2002.md)
 
 ### Authorization
 

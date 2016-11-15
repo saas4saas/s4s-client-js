@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 
 <a name="customerEnjoyValues"></a>
 # **customerEnjoyValues**
-> customerEnjoyValues(customerId, page, numberPerPage, loadResourceStatusList)
+> InlineResponse2003 customerEnjoyValues(customerId, page, numberPerPage, loadResourceStatusList)
 
 
 
@@ -385,7 +385,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.customerEnjoyValues(customerId, page, numberPerPage, loadResourceStatusList, callback);
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -536,7 +536,7 @@ Name | Type | Description  | Notes
 
 <a name="customerHistoryPackValues"></a>
 # **customerHistoryPackValues**
-> customerHistoryPackValues(customerId, page, numberPerPage, loadResourceStatusList)
+> InlineResponse2003 customerHistoryPackValues(customerId, page, numberPerPage, loadResourceStatusList)
 
 
 
@@ -574,7 +574,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.customerHistoryPackValues(customerId, page, numberPerPage, loadResourceStatusList, callback);
@@ -591,7 +591,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 ### Authorization
 
@@ -725,7 +725,7 @@ Name | Type | Description  | Notes
 
 <a name="customerHistorySubscriptionValues"></a>
 # **customerHistorySubscriptionValues**
-> customerHistorySubscriptionValues(customerId, page, numberPerPage, loadResourceStatusList)
+> InlineResponse2004 customerHistorySubscriptionValues(customerId, page, numberPerPage, loadResourceStatusList)
 
 
 
@@ -763,7 +763,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.customerHistorySubscriptionValues(customerId, page, numberPerPage, loadResourceStatusList, callback);
@@ -780,7 +780,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
@@ -793,7 +793,7 @@ null (empty response body)
 
 <a name="customerResource"></a>
 # **customerResource**
-> customerResource(customerId, page, numberPerPage)
+> InlineResponse2005 customerResource(customerId, page, numberPerPage)
 
 
 
@@ -829,7 +829,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.customerResource(customerId, page, numberPerPage, callback);
@@ -845,7 +845,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse2005**](InlineResponse2005.md)
 
 ### Authorization
 
@@ -1234,7 +1234,7 @@ Name | Type | Description  | Notes
 
 <a name="customerSubscriptionValues"></a>
 # **customerSubscriptionValues**
-> customerSubscriptionValues(customerId, page, numberPerPage, loadDefaultUser)
+> InlineResponse2004 customerSubscriptionValues(customerId, page, numberPerPage, loadDefaultUser)
 
 
 
@@ -1272,7 +1272,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully.');
+    console.log('API called successfully. Returned data: ' + data);
   }
 };
 apiInstance.customerSubscriptionValues(customerId, page, numberPerPage, loadDefaultUser, callback);
@@ -1289,7 +1289,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**InlineResponse2004**](InlineResponse2004.md)
 
 ### Authorization
 
