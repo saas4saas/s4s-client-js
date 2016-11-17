@@ -1,6 +1,6 @@
 {
   "name": "s4s_full",
-  "version": "0.1.8",
+  "version": "v0.1.9",
   "description": "description",
   "license": "Apache-2.0",
   "main": "src/index.js",

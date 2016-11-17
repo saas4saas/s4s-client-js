@@ -1706,6 +1706,52 @@
     }
 
     /**
+     * Callback function to receive the result of the renewSession operation.
+     * @callback module:api/SsUserApi~renewSessionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Session} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * 
+     * 
+     * @param {String} authtoken 
+     * @param {module:api/SsUserApi~renewSessionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Session}
+     */
+    this.renewSession = function(authtoken, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'authtoken' is set
+      if (authtoken == undefined || authtoken == null) {
+        throw "Missing the required parameter 'authtoken' when calling renewSession";
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+        'authtoken': authtoken
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = ['tenantid', 'token'];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Session;
+
+      return this.apiClient.callApi(
+        '/s4s-user/renewSession', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the selfAccountGet operation.
      * @callback module:api/SsUserApi~selfAccountGetCallback
      * @param {String} error Error message, if any.

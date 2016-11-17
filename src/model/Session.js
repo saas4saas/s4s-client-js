@@ -61,6 +61,7 @@
 
 
 
+
   };
 
   /**
@@ -74,38 +75,45 @@
     if (data) {
       obj = obj || new exports();
 
+      if (data.hasOwnProperty('rememberMeToken')) {
+        obj['rememberMeToken'] = ApiClient.convertToType(data['rememberMeToken'], 'String');
+      }
       if (data.hasOwnProperty('accountId')) {
         obj['accountId'] = ApiClient.convertToType(data['accountId'], 'String');
       }
-      if (data.hasOwnProperty('userId')) {
-        obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
+      if (data.hasOwnProperty('jwt')) {
+        obj['jwt'] = ApiClient.convertToType(data['jwt'], 'String');
       }
       if (data.hasOwnProperty('token')) {
         obj['token'] = ApiClient.convertToType(data['token'], 'String');
       }
-      if (data.hasOwnProperty('rememberMeToken')) {
-        obj['rememberMeToken'] = ApiClient.convertToType(data['rememberMeToken'], 'String');
+      if (data.hasOwnProperty('userId')) {
+        obj['userId'] = ApiClient.convertToType(data['userId'], 'String');
       }
     }
     return obj;
   }
 
   /**
+   * @member {String} rememberMeToken
+   */
+  exports.prototype['rememberMeToken'] = undefined;
+  /**
    * @member {String} accountId
    */
   exports.prototype['accountId'] = undefined;
   /**
-   * @member {String} userId
+   * @member {String} jwt
    */
-  exports.prototype['userId'] = undefined;
+  exports.prototype['jwt'] = undefined;
   /**
    * @member {String} token
    */
   exports.prototype['token'] = undefined;
   /**
-   * @member {String} rememberMeToken
+   * @member {String} userId
    */
-  exports.prototype['rememberMeToken'] = undefined;
+  exports.prototype['userId'] = undefined;
 
 
 
